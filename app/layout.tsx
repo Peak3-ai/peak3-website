@@ -11,7 +11,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Peak3 - AI & Automation Studio",
+  title: "Peak3 - AI automations",
   description:
     "Turn busywork into autonomous growth. Peak3 designs AI agents & automations that slash costs and give you back your time.",
   openGraph: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       "Turn busywork into autonomous growth. Peak3 designs AI agents & automations that slash costs and give you back your time.",
     images: [
       {
-        url: "/og-peak3.png", // Make sure this image exists in your public folder
+        url: "images/logo.png", // Make sure this image exists in your public folder
         width: 1200,
         height: 630,
         alt: "Peak3 AI & Automation Studio",
@@ -49,7 +49,7 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              console.log('%cAUTOMATE', 'font-size: 50px; color: #1FB2A5; font-weight: bold; text-shadow: 2px 2px #0B1E40;');
+              console.log('%cAUTOMATE', 'font-size: 50px; color: #00c16a; font-weight: bold; text-shadow: 2px 2px #0B1E40;');
               console.log('%cPsst... use coupon code PEAKLAUNCH for 10% off your first project!', 'font-size: 16px; color: #FFB383;');
             `,
           }}

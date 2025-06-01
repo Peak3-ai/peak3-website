@@ -26,7 +26,7 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#1FB2A5",
+          DEFAULT: "#00c16a",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
@@ -55,7 +55,7 @@ const config: Config = {
         },
         // Peak3 Brand Colors
         "peak-navy": "#0B1E40",
-        "peak-teal": "#1FB2A5",
+        "peak-teal": "#00c16a",
         "peak-cloud": "#F9FAFB",
         "peak-peach": "#FFB383",
       },
