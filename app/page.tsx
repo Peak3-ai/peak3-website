@@ -122,7 +122,7 @@ export default function Peak3Website() {
         { name: "Sentiment Analysis", example: "Detects customer tone to prioritize urgent tickets" },
     ]
 
-    const techLogos1 = [
+    const techLogos = [
         { name: "HubSpot", icon: "https://api.iconify.design/simple-icons/hubspot.svg" },
         { name: "Notion", icon: "https://api.iconify.design/simple-icons/notion.svg" },
         { name: "Slack", icon: "https://api.iconify.design/simple-icons/slack.svg" },
@@ -131,10 +131,7 @@ export default function Peak3Website() {
         { name: "Google", icon: "https://api.iconify.design/simple-icons/google.svg" },
         { name: "Linkedin", icon: "https://api.iconify.design/simple-icons/linkedin.svg" },
         { name: "Shopify", icon: "https://api.iconify.design/simple-icons/shopify.svg" },
-        { name: "QuickBooks", icon: "https://api.iconify.design/simple-icons/quickbooks.svg" }
-    ]
-
-    const techLogos2 = [
+        { name: "QuickBooks", icon: "https://api.iconify.design/simple-icons/quickbooks.svg" },
         { name: "Zapier", icon: "https://api.iconify.design/simple-icons/zapier.svg" },
         { name: "Intercom", icon: "https://api.iconify.design/simple-icons/intercom.svg" },
         { name: "Calendly", icon: "https://api.iconify.design/simple-icons/calendly.svg" },
@@ -143,10 +140,7 @@ export default function Peak3Website() {
         { name: "Trello", icon: "https://api.iconify.design/simple-icons/trello.svg" },
         { name: "Asana", icon: "https://api.iconify.design/simple-icons/asana.svg" },
         { name: "Zendesk", icon: "https://api.iconify.design/simple-icons/zendesk.svg" },
-        { name: "Github", icon: "https://api.iconify.design/simple-icons/github.svg" }
-    ]
-
-    const techLogos3 = [
+        { name: "Github", icon: "https://api.iconify.design/simple-icons/github.svg" },
         { name: "Salesforce", icon: "https://api.iconify.design/simple-icons/salesforce.svg" },
         { name: "Teams", icon: "https://api.iconify.design/simple-icons/microsoftteams.svg" },
         { name: "Jira", icon: "https://api.iconify.design/simple-icons/jira.svg" },
@@ -156,6 +150,32 @@ export default function Peak3Website() {
         { name: "Miro", icon: "https://api.iconify.design/simple-icons/miro.svg" },
         { name: "Typeform", icon: "https://api.iconify.design/simple-icons/typeform.svg" },
         { name: "Confluence", icon: "https://api.iconify.design/simple-icons/confluence.svg" }
+    ]
+
+    const techLogos1a = techLogos.slice(0, 8)
+    const techLogos2a = techLogos.slice(8, 16)
+    const techLogos3a = techLogos.slice(16, 24)
+
+    const techLogoRowsDesktop = [
+        { logos: techLogos1a, animation: "animate-scroll" },
+        { logos: techLogos2a, animation: "animate-scroll-reverse" },
+        { logos: techLogos3a, animation: "animate-scroll" }
+    ]
+
+    const techLogos1b = techLogos.slice(0, 4)
+    const techLogos2b = techLogos.slice(4, 8)
+    const techLogos3b = techLogos.slice(8, 12)
+    const techLogos4b = techLogos.slice(12, 16)
+    const techLogos5b = techLogos.slice(16, 20)
+    const techLogos6b = techLogos.slice(20, 24)
+
+    const techLogoRowsMobile = [
+        { logos: techLogos1b, animation: "animate-scroll" },
+        { logos: techLogos2b, animation: "animate-scroll-reverse" },
+        { logos: techLogos3b, animation: "animate-scroll" },
+        { logos: techLogos4b, animation: "animate-scroll" },
+        { logos: techLogos5b, animation: "animate-scroll-reverse" },
+        { logos: techLogos6b, animation: "animate-scroll" }
     ]
 
     const caseStudies = [
@@ -354,7 +374,7 @@ export default function Peak3Website() {
                                         <Button
                                             size="sm"
                                             variant="ghost"
-                                            className="text-[#ffffff] bg-[#00c16a] flex items-center gap-2 -ml-3 mb-5"
+                                            className="text-[#ffffff] bg-[#111111] flex items-center gap-2 mb-8"
                                             onClick={() => toggleCard(study.id)}
                                         >
                                             {isExpanded ? "Hide study" : "Show study"}
@@ -414,13 +434,21 @@ export default function Peak3Website() {
                     <div className="grid lg:grid-cols-2 gap-12">
                         {/* Jack David */}
                         <Card className="p-8">
-                            <div className="flex items-start space-x-6">
-                                <div className="w-24 h-24 bg-gradient-to-br from-[#00c16a] to-[#00c16a]/70 rounded-full flex items-center justify-center">
+                            <div className="flex flex-col sm:flex-row items-start gap-6">
+                                <div className="w-32 h-32 sm:w-24 sm:h-24 rounded-full flex items-center justify-center">
                                     <img src="images/jack.jpg" className="w-full h-full object-cover rounded-full" />
                                 </div>
-                                <div className="flex-1">
-                                    <h3 className="text-2xl font-bold mb-2">Jack David</h3>
-                                    <p className="text-[#00c16a] font-semibold mb-4">Co-Founder / Product & AI Strategy</p>
+                                <div className="flex-1 w-full min-w-0">
+                                    <div className="mb-4 flex items-center gap-2">
+                                        <h3 className="text-2xl font-bold">Jack David</h3>
+                                        <span className="inline-flex items-center rounded-full bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset">co-founder</span>
+                                    </div>
+
+                                    {/* This is the full-width black background block */}
+                                    <div className="bg-[#00c16a] text-white sm:text-black sm:bg-transparent -mx-8 px-8 py-2 mb-4">
+                                        <p className="font-semibold">Product & AI Strategy</p>
+                                    </div>
+
                                     <ul className="text-gray-600 space-y-2 mb-4">
                                         <li>• 7 yrs crafting AI-first products & data pipelines</li>
                                         <li>• 9fin head of ESG SaaS for investors</li>
@@ -439,7 +467,7 @@ export default function Peak3Website() {
                                             href="https://www.linkedin.com/in/jack-david-6225847a"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center px-4 py-2 -ml-4"
+                                            className="flex items-center px-4 py-2 bg-gray-300 mt-8"
                                         >
                                             <ExternalLink className="w-4 h-4 mr-2" />
                                             LinkedIn
@@ -451,20 +479,28 @@ export default function Peak3Website() {
 
                         {/* Brett Spradbury */}
                         <Card className="p-8">
-                            <div className="flex items-start space-x-6">
-                                <div className="w-24 h-24 bg-gradient-to-br from-[#FFB383] to-[#FFB383]/70 rounded-full flex items-center justify-center">
+                            <div className="flex flex-col sm:flex-row items-start gap-6">
+                                <div className="w-32 h-32 sm:w-24 sm:h-24 rounded-full flex items-center justify-center">
                                     <img src="images/brett.jpg" className="w-full h-full object-cover rounded-full" />
                                 </div>
-                                <div className="flex-1">
-                                    <h3 className="text-2xl font-bold mb-2">Brett Spradbury</h3>
-                                    <p className="text-[#00c16a] font-semibold mb-4">Co-Founder / Engineering Lead</p>
+                                <div className="flex-1 w-full min-w-0">
+                                    <div className="mb-4 flex items-center gap-2">
+                                        <h3 className="text-2xl font-bold -ml-5 sm:ml-0">Brett Spradbury</h3>
+                                        <span className="inline-flex items-center rounded-full bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset">co-founder</span>
+                                    </div>
+
+                                    {/* This is the full-width black background block */}
+                                    <div className="bg-[#111111] text-white sm:text-black sm:bg-transparent -mx-8 px-8 py-2 mb-4">
+                                        <p className="font-semibold">Engineering Lead</p>
+                                    </div>
+
                                     <ul className="text-gray-600 space-y-2 mb-4">
                                         <li>• 12+ yrs full-stack dev, AI agents & automation</li>
                                         <li>• Startups, banks & Fortune 500 projects</li>
                                         <li>• Delivered apps across mobile, web & cloud</li>
                                     </ul>
                                     <div className="text-sm text-gray-500">
-                                        <strong>Toolbelt:</strong> React, Next, Vue, Node, GCP, AWS, Supabase, Docker, Playwright, LangChain, Pinecone
+                                        <strong>Toolbelt: </strong>React, Next, Vue, Node, GCP, AWS, Supabase, Docker, Playwright, LangChain, Pinecone
                                     </div>
                                     <Button
                                         asChild
@@ -476,7 +512,7 @@ export default function Peak3Website() {
                                             href="https://www.linkedin.com/in/brett-spradbury"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center px-4 py-2 -ml-4"
+                                            className="flex items-center px-4 py-2 bg-gray-300 mt-8"
                                         >
                                             <ExternalLink className="w-4 h-4 mr-2" />
                                             LinkedIn
@@ -485,17 +521,18 @@ export default function Peak3Website() {
                                 </div>
                             </div>
                         </Card>
+
                     </div>
                 </div>
             </section>
 
             {/* Clients */}
-            <section id="founders" className="py-24 bg-[#ffffff]">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <section id="clients" className="py-24 bg-[#ffffff]">
+                <div className="max-w-7xl mx-auto px-8 sm:px-6 lg:px-8 text-center">
                     <h3 className="text-center text-2xl font-semibold mb-20 text-[#111111]">
                         Businesses that trust us:
                     </h3>
-                    <div className="flex flex-wrap justify-center gap-x-20 gap-y-8">
+                    <div className="flex flex-wrap justify-around gap-x-8 gap-y-8 sm:gap-x-10 sm:gap-y-6">
                         <img src="images/clients/9fin.svg" alt="9fin" className="h-12 object-contain" />
                         <img src="images/clients/bpm.png" alt="BPM" className="h-12 object-contain" />
                         <img src="images/clients/h&s.jpg" alt="H&S" className="h-12 object-contain" />
@@ -521,23 +558,55 @@ export default function Peak3Website() {
                         <CardContent className="p-6">
                             <form className="space-y-4">
                                 <div className="grid md:grid-cols-2 gap-4">
-                                    <Input placeholder="Your Name" className="border-gray-300" />
-                                    <Input placeholder="Work Email" type="email" className="border-gray-300" />
+                                    <Input
+                                        type="text"
+                                        name="name"
+                                        placeholder="Your Name"
+                                        autoComplete="name"
+                                        className="border-gray-300"
+                                        required
+                                    />
+                                    <Input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Work Email"
+                                        autoComplete="email"
+                                        className="border-gray-300"
+                                        required
+                                    />
                                 </div>
                                 <div className="grid md:grid-cols-2 gap-4">
-                                    <select className="w-full p-2 border border-gray-300 rounded-md">
-                                        <option>Company Size</option>
-                                        <option>1-10 employees</option>
-                                        <option>11-50 employees</option>
-                                        <option>51-250 employees</option>
-                                        <option>250+ employees</option>
+                                    <select
+                                        name="companySize"
+                                        required
+                                        defaultValue=""
+                                        className="w-full p-2 border border-gray-300 rounded-md text-sm text-gray-700"
+                                    >
+                                        <option value="" disabled>Company Size</option>
+                                        <option value="1-10">1–10 employees</option>
+                                        <option value="11-50">11–50 employees</option>
+                                        <option value="51-250">51–250 employees</option>
+                                        <option value="250+">250+ employees</option>
                                     </select>
-                                    <Input placeholder="Biggest Bottleneck" className="border-gray-300" />
+                                    <Input
+                                        type="text"
+                                        name="bottleneck"
+                                        placeholder="Biggest Bottleneck"
+                                        className="border-gray-300"
+                                        autoComplete="off"
+                                        required
+                                    />
                                 </div>
-                                <Button className="w-full bg-[#00c16a] hover:bg-[#00c16a]/90 text-white text-lg py-3">Get your free audit</Button>
+                                <Button
+                                    type="submit"
+                                    className="w-full bg-[#00c16a] hover:bg-[#00c16a]/90 text-white text-lg py-3"
+                                >
+                                    Get your free audit
+                                </Button>
                             </form>
                         </CardContent>
                     </Card>
+
                 </div>
             </section>
 
@@ -547,35 +616,43 @@ export default function Peak3Website() {
                     <h3 className="text-center text-2xl font-semibold mb-12 text-[#111111]">
                         We integrate into everything:
                     </h3>
-                    <div className="overflow-hidden mb-7">
-                        <div className="flex animate-scroll items-center">
-                            {[...techLogos1, ...techLogos1].map((logo, index) => (
-                                <div key={index} className="flex items-center space-x-2 text-lg font-semibold ml-20">
-                                    <img src={logo.icon} alt={logo.name} className="h-6 w-6 opacity-40" />
-                                    <span className="text-gray-500">{logo.name}</span>
+
+                    {/* Desktop Version */}
+                    <div className="hidden sm:block">
+                        {techLogoRowsDesktop.map((row, rowIndex) => (
+                            <div key={rowIndex} className="overflow-hidden mb-7">
+                                <div className={`flex items-center ${row.animation}`}>
+                                    {[...row.logos, ...row.logos].map((logo, index) => (
+                                        <div
+                                            key={`${rowIndex}-${index}`}
+                                            className="flex items-center space-x-2 text-lg font-semibold ml-20"
+                                        >
+                                            <img src={logo.icon} alt={logo.name} className="h-6 w-6 opacity-40" />
+                                            <span className="text-gray-500">{logo.name}</span>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
-                        </div>
+                            </div>
+                        ))}
                     </div>
-                    <div className="overflow-hidden mb-7">
-                        <div className="flex animate-scroll-reverse items-center">
-                            {[...techLogos2, ...techLogos2].map((logo, index) => (
-                                <div key={index} className="flex items-center space-x-2 text-lg font-semibold ml-20">
-                                    <img src={logo.icon} alt={logo.name} className="h-6 w-6 opacity-40" />
-                                    <span className="text-gray-500">{logo.name}</span>
+
+                    {/* Mobile Version */}
+                    <div className="block sm:hidden">
+                        {techLogoRowsMobile.map((row, rowIndex) => (
+                            <div key={rowIndex} className="overflow-hidden mb-7">
+                                <div className={`flex items-center ${row.animation}`}>
+                                    {[...row.logos, ...row.logos].map((logo, index) => (
+                                        <div
+                                            key={`${rowIndex}-${index}`}
+                                            className="flex items-center space-x-2 text-lg font-semibold ml-20"
+                                        >
+                                            <img src={logo.icon} alt={logo.name} className="h-6 w-6 opacity-40" />
+                                            <span className="text-gray-500">{logo.name}</span>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="overflow-hidden ">
-                        <div className="flex animate-scroll items-center">
-                            {[...techLogos3, ...techLogos3].map((logo, index) => (
-                                <div key={index} className="flex items-center space-x-2 text-lg font-semibold ml-20">
-                                    <img src={logo.icon} alt={logo.name} className="h-6 w-6 opacity-40" />
-                                    <span className="text-gray-500">{logo.name}</span>
-                                </div>
-                            ))}
-                        </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
