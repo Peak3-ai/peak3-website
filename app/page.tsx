@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
+import { ChevronDown } from "lucide-react"
 import {
     Bot,
     RefreshCw,
@@ -25,6 +26,11 @@ export default function Peak3Website() {
         forkreport: 0,
         ledgerpro: 0,
     })
+    const [expandedCards, setExpandedCards] = useState<Record<string, boolean>>({})
+
+    const toggleCard = (id: string) => {
+        setExpandedCards(prev => ({ ...prev, [id]: !prev[id] }))
+    }
 
     // for rotating words
     const rotatingWords = ["busy", "slow", "boring"]
@@ -284,29 +290,36 @@ export default function Peak3Website() {
             </section>
 
             {/* Use-Case Strip */}
-            <section className="py-16 bg-[#111111] bg-fixed" style={{
-                backgroundImage: "url('/images/logo-repeat.png')",
-                backgroundRepeat: "space",
-                backgroundSize: "70px 50px"
-            }}>
+            <section
+                className="py-16 bg-[#111111] bg-fixed overflow-hidden"
+                style={{
+                    backgroundImage: "url('/images/logo-repeat.png')",
+                    backgroundRepeat: "space",
+                    backgroundSize: "70px 50px",
+                }}
+            >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-wrap justify-center gap-x-6 gap-y-5 pb-4">
-                        {useCases.map((useCase, index) => (
-                            <Badge
-                                key={index}
-                                variant="secondary"
-                                className="whitespace-nowrap px-3 py-2 text-xs lg:px-6 lg:py-3 lg:text-sm bg-white hover:bg-[#00c16a] hover:text-white transition-colors cursor-pointer group relative"
-                                title={useCase.example}
-                            >
-                                {useCase.name}
-                                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-[#0B1E40] text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal w-64 text-center">
-                                    {useCase.example}
-                                </div>
-                            </Badge>
-                        ))}
+                    <div className="overflow-x-hidden">
+                        <div className="flex flex-wrap justify-center gap-x-6 gap-y-5 pb-4">
+                            {useCases.map((useCase, index) => (
+                                <Badge
+                                    key={index}
+                                    variant="secondary"
+                                    className="whitespace-nowrap px-3 py-3 text-[12px] sm:text-xs lg:px-6 lg:py-3 lg:text-sm bg-white hover:bg-[#00c16a] hover:text-white transition-colors cursor-pointer group relative"
+
+                                    title={useCase.example}
+                                >
+                                    {useCase.name}
+                                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-[#0B1E40] text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal w-[90vw] sm:w-64 max-w-xs text-center z-10">
+                                        {useCase.example}
+                                    </div>
+                                </Badge>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
+
 
             {/* Case Studies */}
             <section id="case-studies" className="py-24 bg-white">
@@ -319,38 +332,64 @@ export default function Peak3Website() {
                     </div>
 
                     <div className="grid lg:grid-cols-3 gap-8">
-                        {caseStudies.map((study) => (
-                            <Card key={study.id} className="group hover:shadow-xl transition-all duration-300">
-                                <div className="h-48 bg-gradient-to-br from-black to-[#00c16a]/60 rounded-t-lg flex items-center justify-center">
+                        {caseStudies.map((study) => {
+                            const isExpanded = expandedCards[study.id]
 
-                                    <div className="text-white text-center">
-                                        <h4 className="text-2xl font-bold">{study.title}</h4>
-                                        <p className="text-lg opacity-90">{study.subtitle}</p>
+                            return (
+                                <Card key={study.id} className="group hover:shadow-xl transition-all duration-300">
+                                    {/* Header always visible */}
+                                    <div className="h-48 bg-gradient-to-br from-black to-[#00c16a]/60 rounded-t-lg flex items-center justify-center">
+                                        <div className="text-white text-center">
+                                            <h4 className="text-2xl font-bold">{study.title}</h4>
+                                            <p className="text-lg opacity-90">{study.subtitle}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <CardContent className="p-6">
-                                    <div className="mb-4">
+                                    <div className="p-6">
                                         <h5 className="font-semibold text-[#111111] mb-2">Problem:</h5>
                                         <p className="text-gray-600">{study.problem}</p>
                                     </div>
-                                    <div className="mb-4">
-                                        <h5 className="font-semibold text-[#111111] mb-2">Solution:</h5>
-                                        <p className="text-gray-600">{study.solution}</p>
+
+                                    {/* Toggle button (only on mobile) */}
+                                    <div className="block lg:hidden px-6 pt-4">
+                                        <Button
+                                            size="sm"
+                                            variant="ghost"
+                                            className="text-[#ffffff] bg-[#00c16a] flex items-center gap-2 -ml-3 mb-5"
+                                            onClick={() => toggleCard(study.id)}
+                                        >
+                                            {isExpanded ? "Hide study" : "Show study"}
+                                            <ChevronDown
+                                                className={`h-4 w-4 transform transition-transform duration-300 ${isExpanded ? "rotate-180" : "rotate-0"
+                                                    }`}
+                                            />
+                                        </Button>
                                     </div>
-                                    <div className="mb-4">
-                                        <h5 className="font-semibold text-[#111111] mb-2">Technology:</h5>
-                                        <p className="text-gray-600">{study.technology}</p>
-                                    </div>
-                                    <div className="mb-4">
-                                        <h5 className="font-semibold text-[#111111] mb-2">Hours saved (p/m):</h5>
-                                        <div id={`${study.id}-stats`} className="text-gray-600">
-                                            <div className="text-4xl font-bold text-[#00c16a]">{study.stat}</div>
+
+                                    {/* Content — always visible on desktop, toggled on mobile */}
+                                    <CardContent
+                                        className={`p-6 ${isExpanded ? "block" : "hidden"} lg:block`}
+                                    >
+
+                                        <div className="mb-4">
+                                            <h5 className="font-semibold text-[#111111] mb-2">Solution:</h5>
+                                            <p className="text-gray-600">{study.solution}</p>
                                         </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        ))}
+                                        <div className="mb-4">
+                                            <h5 className="font-semibold text-[#111111] mb-2">Technology:</h5>
+                                            <p className="text-gray-600">{study.technology}</p>
+                                        </div>
+                                        <div className="mb-4">
+                                            <h5 className="font-semibold text-[#111111] mb-2">Hours saved (p/m):</h5>
+                                            <div id={`${study.id}-stats`} className="text-gray-600">
+                                                <div className="text-4xl font-bold text-[#00c16a]">{study.stat}</div>
+                                            </div>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            )
+                        })}
                     </div>
+
 
                 </div>
             </section>
