@@ -625,7 +625,7 @@ export default function Peak3Website() {
                                     {[...row.logos, ...row.logos].map((logo, index) => (
                                         <div
                                             key={`${rowIndex}-${index}`}
-                                            className="flex items-center space-x-2 text-lg font-semibold ml-20"
+                                            className={`flex items-center space-x-2 text-lg font-semibold ${index === 0 ? 'ml-[5vw]' : 'ml-20'}`}
                                         >
                                             <img src={logo.icon} alt={logo.name} className="h-6 w-6 opacity-40" />
                                             <span className="text-gray-500">{logo.name}</span>
@@ -644,7 +644,7 @@ export default function Peak3Website() {
                                     {[...row.logos, ...row.logos].map((logo, index) => (
                                         <div
                                             key={`${rowIndex}-${index}`}
-                                            className="flex items-center space-x-2 text-lg font-semibold ml-20"
+                                            className={`flex items-center space-x-2 text-lg font-semibold ${index === 0 ? 'ml-[5vw]' : 'ml-20'}`}
                                         >
                                             <img src={logo.icon} alt={logo.name} className="h-6 w-6 opacity-40" />
                                             <span className="text-gray-500">{logo.name}</span>
@@ -670,15 +670,42 @@ export default function Peak3Website() {
                             <CardContent className="p-8">
                                 <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
                                 <form className="space-y-6">
-                                    <Input placeholder="Your Name" className="border-gray-300" />
-                                    <Input placeholder="Email Address" type="email" className="border-gray-300" />
-                                    <Textarea placeholder="Tell us about your automation needs..." rows={6} className="border-gray-300" />
-                                    <Button className="w-full bg-[#00c16a] hover:bg-[#00c16a]/90 text-white">Send Message</Button>
+                                    <Input
+                                        type="text"
+                                        name="name"
+                                        placeholder="Your Name"
+                                        autoComplete="name"
+                                        required
+                                        className="border-gray-300"
+                                    />
+                                    <Input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Email Address"
+                                        autoComplete="email"
+                                        required
+                                        className="border-gray-300"
+                                    />
+                                    <Textarea
+                                        name="message"
+                                        placeholder="Tell us about your automation needs..."
+                                        rows={6}
+                                        autoComplete="off"
+                                        required
+                                        className="border-gray-300"
+                                    />
+                                    <Button
+                                        type="submit"
+                                        className="w-full bg-[#00c16a] hover:bg-[#00c16a]/90 text-white"
+                                    >
+                                        Send Message
+                                    </Button>
                                 </form>
                             </CardContent>
                         </Card>
 
-                        <div className="space-y-8">
+
+                        <div className="space-y-8 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                             <div>
                                 <h3 className="text-2xl font-semibold mb-6">Our locations</h3>
                                 <div className="space-y-4">
