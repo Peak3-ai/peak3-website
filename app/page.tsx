@@ -665,9 +665,9 @@ export default function Peak3Website() {
                         <p className="text-xl text-gray-600">Ready to automate your business? Let's talk.</p>
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-12">
+                    <div className="px-4 lg:px-0 grid lg:grid-cols-2 gap-12">
                         <Card>
-                            <CardContent className="p-8">
+                            <CardContent className="p-6">
                                 <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
                                 <form className="space-y-6">
                                     <Input
