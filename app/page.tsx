@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
 import { ChevronDown } from "lucide-react"
+import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from '@/components/ui/select'
 import {
     Bot,
     RefreshCw,
@@ -32,12 +33,23 @@ export default function Peak3Website() {
         setExpandedCards(prev => ({ ...prev, [id]: !prev[id] }))
     }
 
+    const [companySize, setCompanySize] = useState("")
+
     // for rotating words
     const rotatingWords = ["busy", "slow", "boring"]
     const [displayWord, setDisplayWord] = useState("")
     const [wordIndex, setWordIndex] = useState(0)
     const [charIndex, setCharIndex] = useState(0)
     const [isDeleting, setIsDeleting] = useState(false)
+
+    const handleAuditSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (companySize === "") {
+            alert("Please select a company size.");
+            return;
+        }
+        e.currentTarget.submit()
+    };
 
     useEffect(() => {
         const currentWord = rotatingWords[wordIndex];
@@ -556,7 +568,7 @@ export default function Peak3Website() {
 
                     <Card className="max-w-2xl mx-auto">
                         <CardContent className="p-6">
-                            <form className="space-y-4">
+                            <form className="space-y-4" netlify-honeypot="bot-field" netlify="true" onSubmit={handleAuditSubmit}>
                                 <div className="grid md:grid-cols-2 gap-4">
                                     <Input
                                         type="text"
@@ -576,18 +588,21 @@ export default function Peak3Website() {
                                     />
                                 </div>
                                 <div className="grid md:grid-cols-2 gap-4">
-                                    <select
+                                    <Select
                                         name="companySize"
-                                        required
-                                        defaultValue=""
-                                        className="w-full p-2 border border-gray-300 rounded-md text-sm text-gray-700"
+                                        value={companySize}
+                                        onValueChange={setCompanySize}
                                     >
-                                        <option value="" disabled>Company Size</option>
-                                        <option value="1-10">1–10 employees</option>
-                                        <option value="11-50">11–50 employees</option>
-                                        <option value="51-250">51–250 employees</option>
-                                        <option value="250+">250+ employees</option>
-                                    </select>
+                                        <SelectTrigger>
+                                            <SelectValue placeholder="Company size" />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="1-10">1–10 employees</SelectItem>
+                                            <SelectItem value="11-50">11–50 employees</SelectItem>
+                                            <SelectItem value="51-250">51–250 employees</SelectItem>
+                                            <SelectItem value="250+">250+ employees</SelectItem>
+                                        </SelectContent>
+                                    </Select>
                                     <Input
                                         type="text"
                                         name="bottleneck"
@@ -669,7 +684,7 @@ export default function Peak3Website() {
                         <Card>
                             <CardContent className="p-6">
                                 <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
-                                <form className="space-y-6">
+                                <form className="space-y-6" netlify-honeypot="bot-field" netlify="true">
                                     <Input
                                         type="text"
                                         name="name"
@@ -743,32 +758,6 @@ export default function Peak3Website() {
             </section>
 
             <Footer />
-
-            {/* Waitlist Modal */}
-            {isWaitlistModalOpen && (
-                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-                    <Card className="w-full max-w-md">
-                        <CardContent className="p-6">
-                            <div className="flex justify-between items-center mb-6">
-                                <h3 className="text-2xl font-bold">Join Our Waitlist</h3>
-                                <Button variant="ghost" size="sm" onClick={() => setIsWaitlistModalOpen(false)}>
-                                    <X className="h-4 w-4" />
-                                </Button>
-                            </div>
-                            <form className="space-y-4">
-                                <Input placeholder="Your Name" />
-                                <Input placeholder="Work Email" type="email" />
-                                <input type="hidden" name="current-page" value="homepage" />
-                                <input type="text" name="data-bait" style={{ display: "none" }} />
-                                <Button className="w-full bg-[#00c16a] hover:bg-[#00c16a]/90 text-white">Join Waitlist</Button>
-                            </form>
-                            <p className="text-sm text-gray-600 mt-4 text-center">
-                                Be the first to know when we launch new automation solutions.
-                            </p>
-                        </CardContent>
-                    </Card>
-                </div>
-            )}
         </div>
     )
 }
