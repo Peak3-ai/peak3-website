@@ -2,14 +2,14 @@
 
 import Navbar from "@/components/ui/navbar"
 import Footer from "@/components/ui/footer"
-import "../privacy/style.css"
+import "../page.css"
 
 export default function PrivacyPage() {
     return (
         <div className="min-h-screen bg-[#ffffff] text-[rgb(11,30,64)]">
             <Navbar />
 
-            <div className="privacy-container max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
+            <div className="page max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
 
                 <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
                 <p>Last updated: June 01, 2025</p>

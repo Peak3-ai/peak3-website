@@ -2,14 +2,14 @@
 
 import Navbar from "@/components/ui/navbar"
 import Footer from "@/components/ui/footer"
-import "../terms/style.css"
+import "../page.css"
 
 export default function TermsPage() {
     return (
         <div className="min-h-screen bg-[#ffffff] text-[rgb(11,30,64)]">
             <Navbar />
 
-            <div className="terms-container max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
+            <div className="page max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
                 <h1>Terms and Conditions</h1>
                 <p>Last updated: June 01, 2025</p>
                 <p>Please read these terms and conditions carefully before using Our Service.</p>

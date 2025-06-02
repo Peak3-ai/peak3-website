@@ -19,6 +19,7 @@ import {
     X,
     ArrowRight,
 } from "lucide-react"
+import { useRouter } from 'next/router'
 
 export default function Peak3Website() {
     const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false)
@@ -568,7 +569,7 @@ export default function Peak3Website() {
 
                     <Card className="max-w-2xl mx-auto">
                         <CardContent className="p-6">
-                            <form className="space-y-4" netlify-honeypot="bot-field" netlify="true" onSubmit={handleAuditSubmit}>
+                            <form className="space-y-4" netlify-honeypot="bot-field" netlify="true" onSubmit={handleAuditSubmit} action="/thank-you" method="POST">
                                 <div className="grid md:grid-cols-2 gap-4">
                                     <Input
                                         type="text"

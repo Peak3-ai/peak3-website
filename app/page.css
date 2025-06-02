@@ -1,19 +1,19 @@
 /* Headings */
-.privacy-container h1 {
+.page h1 {
   font-size: 2em;
   margin-bottom: 0.5em;
   font-weight: bold;
 }
 
-.privacy-container h2 {
+.page h2 {
   font-size: 1.5em;
   margin-top: 2em;
   margin-bottom: 0.5em;
   font-weight: bold;
 }
 
-.privacy-container h3,
-.privacy-container h4 {
+.page h3,
+.page h4 {
   font-size: 1.2em;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
@@ -21,53 +21,53 @@
 }
 
 /* Text and Lists */
-.privacy-container p {
+.page p {
   margin-bottom: 1em;
   font-size: 1rem;
 }
 
-.privacy-container ul {
+.page ul {
   padding-left: 1.5em;
   margin-bottom: 1.5em;
 }
 
-.privacy-container li {
+.page li {
   margin-bottom: 0.75em;
 }
 
-.privacy-container a {
+.page a {
   color: #00c16a;
   text-decoration: underline;
 }
 
 /* Unordered and Ordered Lists */
-.privacy-container ul,
-.privacy-container ol {
+.page ul,
+.page ol {
   padding-left: 1.5rem;
   margin-bottom: 1.5rem;
   list-style-position: outside;
 }
 
 /* Unordered list bullet styling */
-.privacy-container ul {
+.page ul {
   list-style-type: disc;
 }
 
 /* Ordered list number styling */
-.privacy-container ol {
+.page ol {
   list-style-type: decimal;
 }
 
 /* List items */
-.privacy-container li {
+.page li {
   margin-bottom: 0.75rem;
   font-size: 1rem;
   line-height: 1.6;
 }
 
 /* Nested lists (optional) */
-.privacy-container ul ul,
-.privacy-container ol ol {
+.page ul ul,
+.page ol ol {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   padding-left: 1.25rem;
