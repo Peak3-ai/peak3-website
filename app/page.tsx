@@ -16,10 +16,8 @@ import {
     DollarSign,
     MapPin,
     ExternalLink,
-    X,
     ArrowRight,
 } from "lucide-react"
-import { useRouter } from 'next/router'
 
 export default function Peak3Website() {
     const [isWaitlistModalOpen, setIsWaitlistModalOpen] = useState(false)
@@ -46,11 +44,11 @@ export default function Peak3Website() {
     const handleAuditSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (companySize === "") {
-            alert("Please select a company size.");
+            alert("Please select a company size.")
             return;
         }
         e.currentTarget.submit()
-    };
+    }
 
     useEffect(() => {
         const currentWord = rotatingWords[wordIndex];
@@ -685,7 +683,7 @@ export default function Peak3Website() {
                         <Card>
                             <CardContent className="p-6">
                                 <h3 className="text-2xl font-semibold mb-6">Send us a message</h3>
-                                <form className="space-y-6" netlify-honeypot="bot-field" netlify="true">
+                                <form className="space-y-6" netlify-honeypot="bot-field" netlify="true" action="/thank-you" method="POST">
                                     <Input
                                         type="text"
                                         name="name"
