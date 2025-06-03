@@ -194,26 +194,27 @@ export default function Peak3Website() {
             id: "glowup",
             title: "Food & beverage",
             subtitle: "Restaurant review platform",
-            problem: "Online platform with restaurant reviews needed more curated content at scale.",
-            solution: "Designed & implemented an automated web scraper API, collected & parsed results, cross-verified data with external sources, pushed into database, served into web platform daily.",
+            problem: "They needed more curated, up-to-date content.",
+            solution: "We built an automated scraper to pull new content daily, verify it, process it with GPT4 and send it directly to the platform — no manual input required.",
+
             technology: "GPT-4o, RAG, Vector Database, Postgres, Sanity CMS, Next.js, Node Express, Vercel, Auth0, PostHog analytics",
             stat: animatedStats.glowup,
         },
         {
             id: "forkreport",
-            title: "Administration",
-            subtitle: "CRM integration",
-            problem: "Fireflies to Notion connection required but the standard integration did not meet their requirements.",
-            solution: "Architected & created a custom workflow pipeline & content watchers including 2-way sync to connect the 2 systems.",
+            title: "Digital Media",
+            subtitle: "Internal knowledge hub",
+            problem: "A marketing agency had dozens of call recordings but no way to organise or search them.",
+            solution: "We built a custom integration that tagged and stored each call in a searchable, permission-based Notion database the team could actually use.", 
             technology: "Fireflies API, Notion API, Node Express.js, CRON, Webhook handlers, Supabase, Vercel",
             stat: animatedStats.forkreport,
         },
         {
             id: "ledgerpro",
-            title: "Banking",
-            subtitle: "Transaction monitoring",
-            problem: "Client with mobile payments app needed in-house transaction monitoring where they could layer on their own custom ruleset.",
-            solution: "Built a modular event-driven pipeline with rule-based filters, fraud scoring, and real-time alerts — allowing the client to define and update rules without redeploying code.",
+            title: "Fintech / Banking",
+            subtitle: "Custom transaction monitoring",
+            problem: "They needed to flag suspicious transactions — and own the rules themselves.",
+            solution: "We built a flexible, real-time system with custom filters, fraud scoring, and alerts — the ruleset could be changed without code redeploys.",
             technology: "GPT-4o, Node Express, Kafka, Postgres, Redis, TypeScript, Grafana, Docker, GCP",
             stat: animatedStats.ledgerpro,
         },
@@ -235,10 +236,10 @@ export default function Peak3Website() {
                                     <span className="blink-cursor"></span>
                                 </span>
                                 <p>work into</p>
-                                <p>autonomous growth</p>
+                                <p>bold results</p>
                             </h1>
                             <p className="text-xl lg:text-2xl mb-8 mt-8 text-gray-300 leading-relaxed">
-                                We design AI agents & automations that slash costs and give you back your time.
+                                We build AI agents and automations that save time, reduce costs, and free up your team.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-6">
                                 <Button
@@ -290,7 +291,8 @@ export default function Peak3Website() {
                                 </div>
                                 <h3 className="text-2xl font-semibold mb-4">AI Agents</h3>
                                 <p className="text-gray-600 leading-relaxed">
-                                    24/7 chat, lead qualification & internal co-pilots fine tuned on your data.
+                                    AI agents that handle customer support, qualify leads, and help your team internally — securely trained on your data.
+
                                 </p>
                             </CardContent>
                         </Card>
@@ -302,7 +304,7 @@ export default function Peak3Website() {
                                 </div>
                                 <h3 className="text-2xl font-semibold mb-4">Automated Workflows</h3>
                                 <p className="text-gray-600 leading-relaxed">
-                                    End-to-end glue that replaces brittle Zapier chains & manual spreadsheets.
+                                    Fully automated workflows that replace manual work, save you money and keep your business moving.
                                 </p>
                             </CardContent>
                         </Card>
@@ -313,7 +315,7 @@ export default function Peak3Website() {
                                     <DollarSign className="w-8 h-8 text-[#00c16a]" />
                                 </div>
                                 <h3 className="text-2xl font-semibold mb-4">SaaS Consolidation</h3>
-                                <p className="text-gray-600 leading-relaxed">Bespoke tools that retire $2–5k/mo of licenses.</p>
+                                <p className="text-gray-600 leading-relaxed">Custom-built tools that replace $2–50k+/month of SaaS subscriptions.</p>
                             </CardContent>
                         </Card>
                     </div>
@@ -429,9 +431,9 @@ export default function Peak3Website() {
             <section id="quote" className="py-10 bg-[#00c16a]">
                 <div className="max-w-4xl mx-auto px-2 text-center">
                     <p className="text-2xl text-[#ffffff] mb-6 leading-snug font-mono">
-                        &ldquo;AI has changed the game for business, as we can now automate just about anything&rdquo;
+                        &ldquo;AI is moving at such a breakneck speed, it’s hard to know what to invest in, and when. Peak3 built us something actually useful. They’re truly the best in the game&rdquo;
                     </p>
-                    <span className="block mt-4 text-gray-600 text-lg font-semibold">— Jack David</span>
+                    <span className="block mt-4 text-gray-600 text-lg font-semibold">— Board Advisor, VC</span>
                 </div>
             </section>
 
@@ -461,12 +463,12 @@ export default function Peak3Website() {
                                     </div>
 
                                     <ul className="text-gray-600 space-y-2 mb-4">
-                                        <li>• 7 yrs crafting AI-first products & data pipelines</li>
-                                        <li>• 9fin head of ESG SaaS for investors</li>
-                                        <li>• PwC tech consulting</li>
+                                        <li>• 10+ years building AI products and data pipelines</li>
+                                        <li>• Former Head of ESG at 9fin — led 5+ AI-powered SaaS tools</li>
+                                        <li>• Ex-PwC Tech Consultant</li>
                                     </ul>
                                     <div className="text-sm text-gray-500">
-                                        <strong>Toolbelt:</strong> n8n, Supabase, Python LLMs, APIs
+                                        <strong>Toolbelt:</strong> N8n, GPT-4, Supabase, Apify, Custom Python & APIs
                                     </div>
                                     <Button
                                         asChild
@@ -544,13 +546,11 @@ export default function Peak3Website() {
                         Businesses that trust us:
                     </h3>
                     <div className="flex flex-wrap justify-around gap-x-8 gap-y-8 sm:gap-x-10 sm:gap-y-6">
-                        <img src="images/clients/9fin.svg" alt="9fin" className="h-12 object-contain" />
                         <img src="images/clients/bpm.png" alt="BPM" className="h-12 object-contain" />
                         <img src="images/clients/h&s.jpg" alt="H&S" className="h-12 object-contain" />
                         <img src="images/clients/lyka.svg" alt="Lyka" className="h-12 object-contain" />
                         <img src="images/clients/pwc.svg" alt="PwC" className="h-12 object-contain" />
                         <img src="images/clients/quantium.svg" alt="Quantium" className="h-12 object-contain" />
-                        <img src="images/clients/t3.png" alt="T3" className="h-12 object-contain" />
                     </div>
                 </div>
             </section>
@@ -562,7 +562,7 @@ export default function Peak3Website() {
                         <h2 className="text-4xl lg:text-5xl font-bold text-[#ffffff]">Claim your free audit:</h2>
                     </div>
                     <p className="text-xl text-[#ffffff]/80 mb-8">
-                        "Want to see how we can automate your boring business tasks? We'll map every manual step in your business, estimate ROI, and deliver a blueprint — 100% free with no charge."
+                        We’ll map every manual task in your business, estimate time and cost savings, and deliver a step-by-step automation blueprint. It’s completely free.
                     </p>
 
                     <Card className="max-w-2xl mx-auto">
