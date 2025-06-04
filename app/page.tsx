@@ -260,8 +260,8 @@ export default function Peak3Website() {
                                 </Button>
                             </div>
                         </div>
-                        <div className="flex justify-center mt-20 lg:mt-0">
-                            <div className="w-80 h-80 bg-gradient-to-br from-[#00c16a]/20 to-[#FFB383]/20 rounded-full flex items-center justify-center">
+                        <div className="flex justify-center px-4 py-10 sm:px-6 lg:px-6 lg:py-6">
+                            <div className="w-[250px] h-[250px] md:w-80 md:h-80 bg-gradient-to-br from-[#00c16a]/20 to-[#FFB383]/20 rounded-full flex items-center justify-center">
                                 <img
                                     src="images/rocket.svg"
                                     className="w-4/5 lg:w-full lg:max-w-xs relative bottom-[40px] left-[40px]"
@@ -343,9 +343,6 @@ export default function Peak3Website() {
                                     title={useCase.example}
                                 >
                                     {useCase.name}
-                                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-[#0B1E40] text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-normal w-[90vw] sm:w-64 max-w-xs text-center z-10">
-                                        {useCase.example}
-                                    </div>
                                 </Badge>
                             ))}
                         </div>
