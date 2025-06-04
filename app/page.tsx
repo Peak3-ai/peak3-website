@@ -227,7 +227,7 @@ export default function Peak3Website() {
             {/* Hero Section */}
             <section className="relative overflow-hidden bg-gradient-to-br from-[#111111] to-[#111111]/90 text-white">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#00c16a]/10 to-transparent animate-pulse"></div>
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[50px] pb-[20px] lg:py-32">
                     <div className="grid lg:grid-cols-2 gap-9 items-center">
                         <div>
                             <h1 className="text-5xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight">
