@@ -428,7 +428,7 @@ export default function Peak3Website() {
             <section id="quote" className="py-10 bg-[#00c16a]">
                 <div className="max-w-4xl mx-auto px-2 text-center">
                     <p className="text-2xl text-[#ffffff] mb-6 leading-snug font-mono">
-                        &ldquo;AI is moving at breakneck speed, and it’s hard to keep up. Put simply, Peak3 saved us a lot money.&rdquo;
+                        &ldquo;AI is moving at breakneck speed, and it’s hard to keep up. Put simply, Peak3 saved us a lot of money.&rdquo;
                     </p>
                     <span className="block mt-4 text-gray-600 text-lg font-semibold">— Board Advisor, VC</span>
                 </div>
