@@ -368,7 +368,7 @@ export default function Peak3Website() {
                             return (
                                 <Card key={study.id} className="group hover:shadow-xl transition-all duration-300">
                                     {/* Header always visible */}
-                                    <div className="h-48 bg-gradient-to-br from-black to-[#00c16a]/60 rounded-t-lg flex items-center justify-center">
+                                    <div className="h-[125px] lg:h-48 bg-gradient-to-br from-black to-[#00c16a]/60 rounded-t-lg flex items-center justify-center">
                                         <div className="text-white text-center">
                                             <h4 className="text-2xl font-bold">{study.title}</h4>
                                             <p className="text-lg opacity-90">{study.subtitle}</p>
