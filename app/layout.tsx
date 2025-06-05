@@ -40,6 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <head>
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="5bS/6l2AMpj5S8CP8p3zMw" async></script>
         {/* The <link> for Google Fonts is handled by next/font/google, no need for manual <link> tag */}
         {/* Plausible Analytics Script Placeholder */}
         {/* <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script> */}
