@@ -121,11 +121,16 @@ export default function Peak3Website() {
     }, [])
 
 const useCases = [
+    { name: "Invoice Reconciliation", example: "Auto-match invoices to POs in seconds" },
     { name: "Supply Chain Auditing", example: "AI agents continuously monitor supplier invoices, cross-reference them against shipping manifests, and flag compliance risks in real-time." },
     { name: "Automated Claims Processing", example: "A system uses computer vision to validate insurance claims, detect fraud from documents, and generate a pre-filled package for adjusters." },
+    { name: "KPI Reporting", example: "Real-time dashboards that update automatically" },
+    { name: "Content Repurposing", example: "Turn one blog into 10 social media posts" },
+    { name: "Sentiment Analysis", example: "Detects customer tone to prioritize urgent tickets" },
     { name: "Generative RFP Response", example: "An AI agent trained on your knowledge base to generate a high-quality, 80% complete draft response to a new RFP in under an hour." },
     { name: "Predictive Churn Intervention", example: "A model analyzes usage and billing data to identify at-risk accounts, then automatically triggers a remediation workflow for your CS team." },
     { name: "Autonomous Employee Onboarding", example: "An AI 'concierge' that manages the entire new-hire checklist: provisioning software, scheduling meetings, and answering questions." },
+    { name: "Smart CRM Updates", example: "Logs calls and emails to your CRM with zero effort" },
     { name: "Internal Expertise Engine", example: "A 'Corporate Brain' that indexes all internal documents to help employees instantly find the right expert or answer to a complex question." },
     { name: "Contractual Risk Analysis", example: "A custom model scans third-party contracts and flags non-standard clauses or unacceptable liability terms against your legal playbook." },
     { name: "Regulatory Change Monitoring", example: "An AI agent monitors government feeds for legal changes, summarizes their impact, and automatically creates tasks for your compliance team." },
