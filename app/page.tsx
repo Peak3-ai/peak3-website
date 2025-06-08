@@ -35,7 +35,7 @@ export default function Peak3Website() {
     const [companySize, setCompanySize] = useState("")
 
     // for rotating words
-    const rotatingWords = ["busy", "slow", "boring"]
+    const rotatingWords = ["hard", "slow", "boring"]
     const [displayWord, setDisplayWord] = useState("")
     const [wordIndex, setWordIndex] = useState(0)
     const [charIndex, setCharIndex] = useState(0)
