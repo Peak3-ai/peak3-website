@@ -291,7 +291,7 @@ export default function Peak3Website() {
                                 </div>
                                 <h3 className="text-2xl font-semibold mb-4">AI Agents</h3>
                                 <p className="text-gray-600 leading-relaxed">
-                                    AI agents that handle customer support, qualify leads, and help your team internally — securely trained on your data.
+                                    AI agents that handle complex tasks and help your team internally — securely trained on your data.
 
                                 </p>
                             </CardContent>
