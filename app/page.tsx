@@ -267,6 +267,7 @@ const useCases = [
                             <div className="w-[250px] h-[250px] md:w-80 md:h-80 bg-gradient-to-br from-[#00c16a]/20 to-[#FFB383]/20 rounded-full flex items-center justify-center">
                                 <img
                                     src="images/rocket.svg"
+                                    alt="Illustration of a rocket launching"
                                     className="w-4/5 lg:w-full lg:max-w-xs relative bottom-[40px] left-[40px]"
                                 />
                             </div>
@@ -449,7 +450,7 @@ const useCases = [
                         <Card className="p-8">
                             <div className="flex flex-col sm:flex-row items-start gap-6">
                                 <div className="w-32 h-32 sm:w-24 sm:h-24 rounded-full flex items-center justify-center">
-                                    <img src="images/jack.jpg" className="w-full h-full object-cover rounded-full" />
+                                    <img src="images/jack.jpg" alt="Portrait of Jack David, co-founder of Peak3" className="w-full h-full object-cover rounded-full" />
                                 </div>
                                 <div className="flex-1 w-full min-w-0">
                                     <div className="mb-4 flex items-center gap-2">
@@ -494,7 +495,7 @@ const useCases = [
                         <Card className="p-8">
                             <div className="flex flex-col sm:flex-row items-start gap-6">
                                 <div className="w-32 h-32 sm:w-24 sm:h-24 rounded-full flex items-center justify-center">
-                                    <img src="images/brett.jpg" className="w-full h-full object-cover rounded-full" />
+                                    <img src="images/brett.jpg" alt="Portrait of Brett Spradbury, co-founder of Peak3" className="w-full h-full object-cover rounded-full" />
                                 </div>
                                 <div className="flex-1 w-full min-w-0">
                                     <div className="mb-4 flex items-center gap-2">
@@ -546,11 +547,11 @@ const useCases = [
                         Businesses that trust us:
                     </h3>
                     <div className="flex flex-wrap justify-around gap-x-8 gap-y-8 sm:gap-x-10 sm:gap-y-6">
-                        <img src="images/clients/bpm.png" alt="BPM" className="h-12 object-contain" />
-                        <img src="images/clients/h&s.jpg" alt="H&S" className="h-12 object-contain" />
-                        <img src="images/clients/lyka.svg" alt="Lyka" className="h-12 object-contain" />
-                        <img src="images/clients/pwc.svg" alt="PwC" className="h-12 object-contain" />
-                        <img src="images/clients/quantium.svg" alt="Quantium" className="h-12 object-contain" />
+                        <img src="images/clients/bpm.png" alt="BPM logo" className="h-12 object-contain" />
+                        <img src="images/clients/h&s.jpg" alt="H&S logo" className="h-12 object-contain" />
+                        <img src="images/clients/lyka.svg" alt="Lyka logo" className="h-12 object-contain" />
+                        <img src="images/clients/pwc.svg" alt="PwC logo" className="h-12 object-contain" />
+                        <img src="images/clients/quantium.svg" alt="Quantium logo" className="h-12 object-contain" />
                     </div>
                 </div>
             </section>
@@ -641,7 +642,7 @@ const useCases = [
                                             key={`${rowIndex}-${index}`}
                                             className={`flex items-center space-x-2 text-lg font-semibold ${index === 0 ? 'ml-[5vw]' : 'ml-20'}`}
                                         >
-                                            <img src={logo.icon} alt={logo.name} className="h-6 w-6 opacity-40" />
+                                            <img src={logo.icon} alt={`${logo.name} logo`} className="h-6 w-6 opacity-40" />
                                             <span className="text-gray-500">{logo.name}</span>
                                         </div>
                                     ))}
@@ -660,7 +661,7 @@ const useCases = [
                                             key={`${rowIndex}-${index}`}
                                             className={`flex items-center space-x-2 text-lg font-semibold ${index === 0 ? 'ml-[5vw]' : 'ml-20'}`}
                                         >
-                                            <img src={logo.icon} alt={logo.name} className="h-6 w-6 opacity-40" />
+                                            <img src={logo.icon} alt={`${logo.name} logo`} className="h-6 w-6 opacity-40" />
                                             <span className="text-gray-500">{logo.name}</span>
                                         </div>
                                     ))}
